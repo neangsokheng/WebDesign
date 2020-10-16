@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<button onClick="continuebreak()">Continue</button>
+<button onClick="dowhile1()">Show</button>
+<button onClick="swithcase()">Show1</button><br><br>
+
+<select id="select" style="width: 100px; font-size: 20px;">
+	<option>+</option>
+	<option>-</option>
+	<option>*</option>
+	<option>/</option>
+</select><br><br>
+<form>
+	<input type="text" id="a">
+	<input type="text" id="b">
+</form><br>
+<button onClick="calulator()">Show2</button><br><br>
+<p id="result"></p>
+<script>
+	function loop(){
+		var a=prompt();
+		for(i=1;i<=a;i++){
+			document.write(i+"<br>");
+		}
+	
+	}
+	function whileloop(){
+		var i=prompt();
+		while(i<=10){
+			document.write(i+"<br>");
+			i++;
+		}
+	}
+	function whileloop1(){
+		var i=prompt();
+		while(i>=1){
+			document.write(i+"<br>");
+			i--;
+		}
+	}
+	function dowhile1(){
+		var i=prompt();
+		do{
+			document.write(i+"<br>");
+			i--;
+		}while(i>=10);
+	}
+	function continuebreak(){
+		var a=prompt();
+		var i;
+		for(i=1;i<a;i++){
+			if(i==3)
+				continue;
+			document.write(i+"<br>");
+			if(i==10){
+				break;
+				document.write(i+"<br>");
+			}
+		}
+	}
+	
+	function swithcase(){
+		var i=parseInt(prompt());
+		switch(i){
+			case 1:
+				document.write("Number="+""+i);
+			break;
+			case 2:
+				document.write("Number="+""+i);
+			break;
+			case 3:
+				document.write("Number="+""+i);
+			break;
+			case 4:
+				document.write("Number="+""+i);
+			break;
+		}
+	}
+	
+	
+	function calulator(){
+		var a=parseInt(document.getElementById("a").value);
+		var b=parseInt(document.getElementById("b").value);
+		var cal=document.getElementById("select").value;
+		switch(cal){
+			case "+":
+				document.getElementById("result").innerHTML="Result="+""+parseInt(a+b);
+				break;
+			case "-":
+				document.getElementById("result").innerHTML="Result="+""+parseInt(a-b);
+				break;
+			case "*":
+				document.getElementById("result").innerHTML="Result="+""+parseFloat(a*b);
+				break;
+			case "/":
+				document.getElementById("result").innerHTML="Result="+""+parseFloat(a/b);
+				break;
+		}
+	}
+</script>
+
+<button onclick="number()">Number</button>
+<script>
+	function number(){
+		var a=parseInt(prompt());
+		for(var i=1;i<a;i++){
+			for(var j=1;j<a;j++){
+				document.write(i+"x"+j+"="+i*j+"<br>");
+			}
+			document.write("<br>");
+		}
+	}
+</script>
+
+<button onclick="evenAndodd()">EvenAndOdd</button>
+<script>
+	function evenAndodd(){
+		var a=parseInt(prompt());
+
+		for(var i=1;i<a+1;i++){
+			if(i%2==0){
+				document.write(i+" "+"is even number"+"<br>");
+			}else{
+				document.write(i+" "+"is Odd number"+"<br>");
+			}
+			document.write("<br>");
+		}
+	}
+</script>
+
+<button onclick="fact()">Fact</button>
+<script>
+	function fact(){
+		var a=parseInt(prompt());
+		var total=0;
+		for(var i=1;i<=a;i++){
+			total=total+i;
+			document.write(i+"+");
+		}
+		document.write("="+total);
+	}
+</script>
+
+
+<button onclick="loop3()">loop3</button>
+<script>
+	var a=parseInt(alert());
+	function loop3(a,b){
+		return a+b;
+	}
+</script>
+</body>
+</html>

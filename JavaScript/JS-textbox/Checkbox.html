@@ -1,0 +1,144 @@
+<html>
+    <head></head>
+    <body>
+       <form onsubmit="return checkform(this);">
+           input:
+           <input type="text" size="32" name="inputfield">
+           <input type="submit" value="Submit">
+       </form>
+       <script>
+           function checkform(form){
+               if(form.inputfield.value ==""){
+                   alert("Error: Input is Empty!");
+                   form.inputfield.focus();
+                   return false;
+               }
+           }
+       </script>
+
+        <form onsubmit="return formcheck(this);">
+            input:
+            <input type="checkbox" size="32" name="terms">
+            <input type="submit" value="Submit">
+        </form>
+        <p id="demo"></p>
+        <script>
+            function formcheck(form){
+                if(!form.terms.checked){
+                    alert("Place Check item");
+                    form.terms.focus();
+                    return false;
+                }else{
+                    document.getElementById("demo").innerHTML="check Scuess";
+                    document.getElementById("demo").style.color='red';
+                    return false;
+                }
+                
+            }
+        </script><br><br><br>
+
+        <form  name="form" style="padding: 10px;" onclick="return check_details(this);">
+            Name:
+            <input type="text" name="check_name"><p id="demo_name"></p><br>
+            Phone:
+            <input type="text" name="check_phone"><br>
+            <p id="demo_phone"></p>
+            Gender:
+            <input type="checkbox" name="check_gender">Male<br>
+            <input type="checkbox" name="check_gender">Female<br>
+            <p id="demo_gender"></p>
+            <input type="submit"  value="submit" onclick="mynumber(document.form.check_phone);">
+        </form>
+
+        <script>
+            function check_details(form){
+                if(form.check_name.value == ""){
+                    document.getElementById("demo_name").innerHTML="Place Input Name";
+                    document.getElementById("demo_name").style.color='red';
+                    return false;
+                }
+                else{
+                    alert("Scuess Name");
+                }
+            }
+
+            function mynumber(inputnumber){
+            var mynumber=letters=/^[0-9]+$/;
+            if(inputnumber.value.match(mynumber)){
+                alert('Scuess');
+                return true;
+            }else{
+                document.getElementById("demo_phone").innerHTML="Place Number Only";
+                document.getElementById("demo_phone").style.color='red';
+                return false;
+            }
+        }
+        </script>
+
+
+        <form onsubmit="return checkdatetime(this);">
+            <fieldset style="width: 300px; ">
+                <legend>Even Details</legend>
+                <label>Start Date:</label><br><br>
+                <input type="text" size="12" placeholder="dd/mm/yyyy" name="startdate"><br><br>
+                <label>Start Time</label><br><br>
+                <input type="text" size="12"   placeholder="dd/mm/yyyy" name="starttime"><br><br>
+                <input type="submit">
+            </fieldset>
+        </form>
+
+        <script>
+            function checkdatetime(form){
+                var re= /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+                var re1= /^\d{1,2}:\d{2}([ap]m)?$/;
+                if(form.startdate.value != '' && !form.startdate.value.match(re)){
+                    alert("Invalid Date format:" + form.startdate.value);
+                    form.startdate.focus();
+                    return false;
+                }
+                else if(form.starttime.value != '' && !form.starttime.match(re1)){
+                    alert("Invalid Time format:" + form.starttime.value);
+                    form.starttime.focus();
+                    return false
+                }
+                else
+                {
+                    alert("All Input Fields have been Validate !");
+                     return true;
+                }
+            }
+        </script>
+
+
+        <form>
+            <fieldset>
+                <legend>Date</legend>
+                <input type="date" id="cal">
+                <input type="submit" value="submit" onclick="demo();">
+            </fieldset>
+        </form>
+        
+        <script>
+            function demo(){
+                var st = "";
+                var time = new Date();
+                var hr = time.getHours();
+                if(hr < 12){
+                    st = "AM";
+                }else{
+                    st = "PM";
+                }
+                if(hr == 0){
+                    hr = 12;
+                }
+                if(hr > 12){
+                    hr = hr - 12;
+                }
+                var cal = document.getElementById('cal').value;
+                var m = time.getMinutes();
+                var s = time.getSeconds();
+                document.write(cal+" "+hr+":"+m+":"+s+" "+st);
+            }
+        </script>
+    </body>
+</html>

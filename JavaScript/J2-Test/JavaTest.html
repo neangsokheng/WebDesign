@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+	tr{
+		transition: all .25s ease-in-out;
+	}
+	tr:hover{
+		background-color: beige;
+		cursor: pointer;
+	}
+</style>
+<body>
+<div class="container">
+	<div class="row">
+			<form class="form-group">
+				<label class="control-label">ID</label>
+				<input type="text" class="form-control" id="id">
+				<label class="control-label" >Name</label>
+				<input type="text" class="form-control" id="name">
+				<label class="control-label" >C#</label>
+				<input type="text" class="form-control" id="c">
+				<label class="control-label" >Java</label>
+				<input type="text" class="form-control" id="java">
+				<label class="control-label" >Database</label>
+				<input type="text" class="form-control" id="db">
+			</form>
+			<button class="btn btn-primary" onClick="show()">Add</button>
+			<button class="btn btn-primary" onClick="editrow()">Edit</button>
+			<button class="btn btn-primary" onClick="remove()">Remove</button>
+	</div>
+	<table class="table" id="Display">
+		<thead>
+			<tr>
+				<th >Id</th>
+				<th >Name</th>
+				<th >C#</th>
+				<th >java</th>
+				<th >Database</th>
+			</tr>
+		</thead>
+	</table>
+	<!--<p id="demo" style="font-size: 20px;"></p>-->
+</div>
+</body>
+<script>
+	var index,tbl=document.getElementById("Display");
+	var sumval=0;
+
+	function show(){
+		
+		var id=document.getElementById("id").value;	
+		var name=document.getElementById("name").value;
+		var c=document.getElementById("c").value;
+		var java=document.getElementById("java").value;
+		var db=document.getElementById("db").value;
+
+		if(id==""){
+			alert("Place input ID");
+		}else if(name==""){
+			alert("Place input Name");
+		}else if(c==""){
+			alert("Place input Sex");
+		}else if(java==""){
+			alert("Place input Score");
+		}else if(db==""){
+			alert("Place input Score");
+		}else{
+			
+			var row=tbl.insertRow();
+			var cell1=row.insertCell();
+			var cell2=row.insertCell();
+			var cell3=row.insertCell();
+			var cell4=row.insertCell();
+			var cell5=row.insertCell();
+
+			cell1.innerHTML=id;
+			cell2.innerHTML=name;
+			cell3.innerHTML=c;
+			cell4.innerHTML=java;
+			cell5.innerHTML=db;
+			
+			
+			clear();
+
+			//for(var i=1;i<tbl.rows.length;i++){
+				//sumval=sumval+parseInt(tbl.rows[i].cells[2].innerHTML);
+			//}
+			//document.getElementById("demo").innerHTML="Total Score="+" "+sumval;
+
+
+
+			
+
+
+			
+		}
+		selectrow();
+	}
+
+
+	function clear(){
+			var id=document.getElementById("id").value="";
+			var name=document.getElementById("name").value="";
+			var c=document.getElementById("c").value="";
+			var java=document.getElementById("java").value="";
+			var db=document.getElementById("db").value="";
+	}
+
+
+	function selectrow(){
+			
+			for(var i=1;i<tbl.rows.length;i++){
+				tbl.rows[i].onclick=function(){
+					index=this.rowIndex;
+					console.log(index);
+
+
+					var id=document.getElementById("id").value=this.cells[0].innerHTML;
+					var name=document.getElementById("name").value=this.cells[1].innerHTML;
+					var c=document.getElementById("c").value=this.cells[2].innerHTML;
+					var java=document.getElementById("java").value=this.cells[3].innerHTML;
+					var db=document.getElementById("db").value=this.cells[4].innerHTML;
+
+				};
+			}
+		}
+		selectrow();
+
+	function editrow(){
+
+		var id=document.getElementById("id").value;	
+		var name=document.getElementById("name").value;
+		var c=document.getElementById("c").value;
+		var java=document.getElementById("java").value;
+		var db=document.getElementById("db").value;
+
+		tbl.rows[index].cells[0].innerHTML=id;
+		tbl.rows[index].cells[1].innerHTML=name;
+		tbl.rows[index].cells[2].innerHTML=c;
+		tbl.rows[index].cells[3].innerHTML=java;
+		tbl.rows[index].cells[4].innerHTML=db;
+
+
+
+		clear();
+
+	}
+
+	function remove(){
+		tbl.deleteRow(index);
+		clear();
+	}
+</script>
+</html>

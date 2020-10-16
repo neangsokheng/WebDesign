@@ -1,0 +1,106 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="java.js"></script>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+
+</style>
+</head>
+<body>
+<button onclick="shows()">New</button>
+<div id="show">
+  <form action="" style="max-width:500px;margin:auto;margin-top: 180px; background-color:beige; padding: 20px;">
+    
+    <img src="pic2.png" alt="Cinque Terre" width="170" height="160" style="margin-bottom: 20px; border-radius: 50%; margin-left: 135px; "> 
+
+    <div class="input-container">
+      <i class="fa fa-user icon"></i>
+      <input class="input-field" type="text" placeholder="Username" id="user" onfocus="this.value=''" value="sokheng">
+    </div>
+    <div class="input-container">
+      <i class="fa fa-key icon"></i>
+      <input class="input-field" type="password" placeholder="Password" name="psw" id="pass" onfocus="this.value=''" value="123">
+    </div>
+    <div class="input-container">
+      <i class="fa fa-envelope icon"></i>
+      <input class="input-field" type="password" placeholder="Email" name="psw" id="email" onfocus="this.value=''" value="abc">
+    </div>
+    <div class="input-container">
+      <i class="fa fa-phone icon"></i>
+      <input class="input-field" type="text" placeholder="Phone" name="psw" id="phone" onfocus="this.value=''" value="012">
+    </div>
+    <div class="input-container">
+      <label class="control-label">Gender:</label>
+      <div class="radio-inline" style="margin-left: 10px;">
+        <label><input type="radio"name="one" value="Male"  required>Male</label>
+        <label><input type="radio" name="one" value="Female" required>Female</label>
+      </div>
+    </div>
+    <div class="input-container">
+      <label class="control-label">Country:</label>
+      <div class="form-group" style="margin-left: 15px;">
+           <select class="form-control">
+              <option>Cambodia</option>
+              <option>Thialand</option>
+              <option>Japan</option>
+              <option>Chiness</option>
+              <option>USA</option>
+            </select>
+      </div>
+    </div>
+  
+    <button type="submit" class="btn" onclick="login()">Submit</button>
+    <button type="submit" class="btn" onclick="Views()" style="margin-top: 10px;">Reset</button>
+   
+  </form>
+</div>
+
+
+</body>
+</html>

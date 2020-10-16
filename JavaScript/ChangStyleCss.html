@@ -1,0 +1,30 @@
+<html>
+    <head></head>
+    <body>
+        <p id="c">Welcome</p>
+        <button onclick="chang()">Clicke</button>
+        <img src="pic1.jpg" width="300" height="300" id="img">
+    </body>
+    <script>
+       var x=0;
+        function chang(){
+            
+            //if(x==0){
+               //document.getElementById("c").style.color="blue";
+                //x=1;
+            //}else if(x==1){
+              // document.getElementById("c").style.color="red";
+                //x=0;
+           // }
+
+            if(x==0){
+               var c=document.getElementById("img").src="pic2.jpg";
+                x=1;
+            }else if(x==1){
+               var c=document.getElementById("img").src="pic1.jpg";
+                x=0;
+            }
+        }
+
+    </script>
+</html>

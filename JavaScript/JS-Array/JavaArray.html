@@ -1,0 +1,52 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <button onclick="array1()">Array</button>
+        <script>
+            function array1(){
+                var n=prompt();
+                //var a=parseInt(prompt());
+                var array=new Array(10,20,30,40,50);
+                array.push(n);
+                //var a=[10,20,30,40];
+                //document.write(array[a]);
+               for(var i=0;i<array.length;i++){
+                    document.write(array[i]+"<br>");
+                }
+            }
+        </script>
+
+        <button onclick="array2()">Array2</button>
+        <p id="array2"></p>
+        <script>
+            function array2(){
+                var array=["Blue","Red","Green","Yellow"];
+                document.getElementById("array2").innerHTML=array.push("");
+            }
+        </script>
+
+        <button onclick="array3()">Array3</button>
+        <script>
+            function array3(){
+                var array=[20,30,10,50,40,70,60];
+                array.sort();
+                document.write(array);
+            }
+        </script>
+
+        <button onclick="sumArray()">SumArray</button>
+        <script>
+            function sumArray(){
+                var array=[10,20,30,40];
+                var sum=0;
+                for(var i=0;i<array.length;i++){
+                    document.write(array[i]+" ");
+                    sum=sum+array[i];
+                }
+                document.write("<br>"+"Sum="+" "+sum);
+            }
+        </script>
+    </body>
+</html>

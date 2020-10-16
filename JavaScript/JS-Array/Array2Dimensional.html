@@ -1,0 +1,93 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <script>
+            var arr=new Array();
+            arr[0]=new Array();
+                arr[0][0]=1;
+                arr[0][1]=2;
+            arr[1]=new Array();
+                arr[1][0]=3;
+                arr[1][1]=4;
+            arr[0][1];
+        </script>
+        <script>
+            var arr=new Array();
+            arr[0]=new Array();//row
+                arr[0][0]=1;//colunm
+                arr[0][1]=2;//column
+            arr[1]=new Array();
+                arr[1][0]=3;
+                arr[1][1]=4;
+            arr[2]=new Array();
+                arr[2][0]=6;
+                arr[2][1]=9;
+
+            for(var i=0;i<3;i++){//row
+                for(var j=0;j<2;j++){//colunm
+                    document.write("Array"+"["+i+"]"+"["+j+"]"+"="+arr[i][j]+"      ");
+                }
+                document.write("<br>");
+            }
+        </script>
+
+        <script>     
+            function show(){
+                         //0//1//2
+                var arr=[[10,20,30],[40,50,60],[70,80,90]];
+                var str="<table border=1>";
+                    str+="<tr><th>num1</th><th>num2</th><th>num3</th></tr>"
+                for(var i=0;i<3;i++){
+                     for(var j=0;j<3;j++){
+                         //document.write("Array"+"["+i+"]"+"["+j+"]"+"="+arr[i][j]+"   ");
+                        str+="<tr><td>"+i+"</td><td>"+j+"</td><td>"+arr[i][j]+"</td></tr>";
+                     }
+                 }
+                 str+="</table>";
+                 document.write(str);
+            }
+            show();
+        </script>
+          
+        <script>
+            function show1(){
+                var n=prompt();
+                var arr=[];
+                for(var i=0;i<n;i++){
+                     arr[i]=prompt("Enter Name:");
+                }
+                for(var i=0;i<n;i++){
+                    document.write(arr[i]+"<br>");
+                }
+            }
+        </script>
+        
+        <script>
+            function show3(){
+                var imax=prompt();
+                var jmax=prompt();
+                var arr=new Array();
+                for(var i =0;i<imax;i++){
+                    arr[i]=new Array();
+                    for(var j=0;j<jmax;j++){
+                        arr[i][j]=prompt("Input Array=");
+                    }
+                }
+                var str="<table align=center border=1 width=100px >";
+                for(var i=0;i<imax;i++){
+                    str+="<tr>";
+                    for(var j=0;j<jmax;j++){
+                        str+="<td>"+arr[i][j]+"</td>";
+                    }
+                    str+="</tr>";
+                }
+                str+="</table>";
+                document.write(str);
+            }
+            show3();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<button onClick="show()">Show</button><br>
+<script>
+	function rfuntion(a,b){
+		return a+b;
+	}
+	function show(){
+		var a=parseInt(prompt());
+		var b=parseInt(prompt());
+		alert(rfuntion(a,b));
+	}
+</script>
+
+
+<script>
+	function rfuntion1(a,b){
+		return a+b;
+	}
+	function show1(){
+		alert(rfuntion1(20,20));
+	}
+	
+	function refuntion(a){
+		var greet="My name is"+" "+a;
+		return greet;
+	}
+	function show2(){
+		alert(refuntion("Sokheng"));
+	}
+</script>
+
+
+<script>
+	var friend=["Sokheng","Heng","Sun"];
+	friend.forEach(function(name){
+		document.write(name+"<br>");
+	});
+</script>
+
+</body>
+</html>

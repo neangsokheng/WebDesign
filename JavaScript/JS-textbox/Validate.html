@@ -1,0 +1,105 @@
+<html>
+    <head></head>
+    <body>
+        <!--Validate Charater-->
+        <form name="myform">
+            FirstName:<br>
+            <input type="text" name="fname" required><br><br>
+            lastName:<br>
+            <input type="text" name="lname" required><br><br>
+            <button onclick="allletter(document.myform.fname);allletter(document.myform.lname)">Submit</button>
+            <button>Reset</button>
+        </form>
+
+        <script>
+            function allletter(inputtxt){
+                var letters = /^[A-Za-z]+$/;
+                if(inputtxt.value.match(letters)){
+                    alert('Trun Name');
+                    return true;
+                }else{
+                    alert('False Name');
+                    return false;
+                }
+            }
+        </script>
+
+        <!-- Validate Number-->
+        <form name="mynumber">
+            Input A:<br>
+            <input type="text" name="nb1" required><br><br>
+            lastName B:<br>
+            <input type="text" name="nb2" required><br><br>
+            <button onclick="allnumber(document.mynumber.nb1);allletter(document.mynumber.nb2)">Submit</button>
+            <button>Reset</button>
+        </form>
+
+        <script>
+            function allnumber(inputtxt){
+                var number=/^[0-9]+$/;
+                if(inputtxt.value.match(number)){
+                    alert('Trun number');
+                    return true;
+                }else{
+                    alert('False number');
+                    return false;
+                }
+            }
+        </script>
+        <!--Validate Charater And Number-->
+        <form name="myname">
+            Input Floating Value A:<br>
+            <input type="text" name="firstname"><br>
+            Input Floating Value B:<br>
+            <input type="text" name="lastname"><br>
+            <input type="submit" value="Submit" onclick="alldetails(document.myname.firstname);alldetails(document.myname.lastname)"><br><br>
+        
+        </form>
+        <script>
+            function alldetails(inputtxt){
+                var number=letters=/^[0-9a-zA-Z]+$/;
+                if(inputtxt.value.match(number)){
+                    alert("Your Number have accepted : you try another");
+                    return true;
+                }
+                else{
+                    alert("Place input Number Floating (0-9) and A-Z only");
+                    return false;
+                }
+            }
+        </script>
+
+
+    <form name="MyNameAndNumber">
+        User<br>
+        <input type="text" name="firstname"><br>
+        PassWord<br>
+        <input type="text" name="PassWord"><br>
+        <input type="submit" value="Submit" onclick="mycharater(document.MyNameAndNumber.firstname);mynumber(document.MyNameAndNumber.PassWord)"><br><br>
+
+    </form>
+    
+    <script>
+        function mycharater(inputtext){
+            var Charater=letters=/^[a-zA-z]+$/;
+            if(inputtext.value.match(Charater)){
+                alert("Trun Uer");
+                return true;
+            }else{
+                alert("Flase User");
+                return false;
+            }
+        }
+        function mynumber(inputnumber){
+            var mynumber=letters=/^[0-9]+$/;
+            if(inputnumber.value.match(mynumber)){
+                alert("trun PassWord");
+                return true;
+            }else{
+                alert("false Password");
+                return false;
+            }
+        }
+    </script>
+    </body>
+</html>

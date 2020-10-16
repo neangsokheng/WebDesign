@@ -1,0 +1,55 @@
+<html>
+    <head>
+
+    </head>
+    <style>
+       
+    </style>
+    <body>
+            <input type="text" id="id"><br><br>
+            <input type="text" id="name"><br><br>
+            <input type="text" id="male"><br><br>
+            <button onclick="add()">Add</button>
+           
+      <script>
+            var n;
+            var id=new Array(10);
+            var Name=new Array(10);
+            var sex=new Array(10);
+            var str="<table border=1>";
+                str +="<tr><th>ID</th><th>Name</th><th>Sex</th></tr>";
+                function Add(){
+                    n=prompt("Input N");
+                    for(var i=0;i<n;i++){
+                        id[i]=prompt("Input ID");
+                        Name[i]=prompt("Input Name");
+                        sex[i]=prompt("Input Sex");
+                    }
+                }
+                function View()
+                    for(var i=0;i<n;i++){
+                        str +="<tr><td>"+id[i]+"</td><td>"+Name[i]+"</td><td>"+sex[i]+"</td></tr>";
+                    }
+                    str +="</table>";
+                    document.write(str);
+                }
+                Add();
+                View();
+        </script>
+        <script>
+            
+            function add(){
+                var ids=document.getElementById("id").value;
+                var Name=document.getElementById("name").value;
+                var sex=document.getElementById("male").value;
+                var str="<table border=1>";
+                    str +="<tr><th>ID</th><th>Name</th><th>Sex</th></tr>";
+                    
+                        str+="<tr><td>"+ids+"</td><td>"+Name+"</td><td>"+sex+"</td></tr>";
+                        str +="</table>";
+                        document.write(str);
+                }
+                    
+        </script>
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<style>
+	#form{
+		width: 400px;
+		padding: 20px;
+		background: red;
+		margin-bottom: 10px;
+	}
+	input[type="text"]{
+		width: 400px;
+		margin-top: 10px;
+	}
+	input[type="button"]{
+		width: 80px;
+		margin-top: 10px;
+	}
+</style>
+</head>
+
+<body>
+	<script>
+		/*document.write("hello"+"<br/>");*/
+		/*prompt();*/
+		/*alert("15+2=" +(15+2));*/
+		/*document.write("100*100="+ (100*100));*/
+	</script>
+	
+	<!--<script>
+		var a=parseFloat(prompt("Input A="));
+		var b=parseFloat(prompt("Input B="));
+		var c=parseFloat(a+b)
+		alert("A="+a+"\n"+"B="+b+"\n"+c);
+	</script>-->
+	
+	<!--<script>
+		var a=10;
+		var b=20;
+		
+		if(a>b){
+			alert(a);
+		}else{
+			alert(b);
+		}
+		document.write("A="+a+"<br\>"+"B="+b)
+	</script>-->
+	
+	<!--<button onClick="myfuntion()">Click</button>
+	<p id="demo"></p>
+	<script>
+		function myfuntion(){
+			var txt=" ";
+			var person=prompt("Place Enter Your Name");
+			if(person!=" ")
+				{
+					document.write("hello");
+				}
+			else{
+				alert("Enter Your name")
+			}
+		}
+		
+	</script>-->
+	<!--<button onClick="myfuntion()">Click</button>
+	<script>
+		function myfuntion(){
+			var name,pass,cpass;
+			name=prompt("Place Input Name");
+			pass=prompt("place Input Pass");
+			cpass=prompt("Place Input Cpass");
+			if(name=="sa"){
+				if(pass=="123"){
+					if(cpass=="123"){
+						alert("Welcom Login");
+					}
+				}
+			}else{
+				alert("Incorrect");
+			}
+		
+			}
+	</script>-->
+	
+	<!--<button onClick="input()">Input</button>
+	<button onClick="show()">Result</button>
+	<script>
+		var code,name,qty,price,total,dis,pay;
+		
+		function input(){
+			code=prompt("Input Code");
+			name=prompt("Input Name");
+			qty=parseInt(prompt("Input qty"));
+			price=parseFloat(prompt("Input Price"));
+			total=qty*price;
+			if(total>1&&total<=10)
+				dis=0;
+			else if(total>11&&total<=20)
+				dis=total*0.5;
+			else if(total>21&&total<=30)
+				dis=total*0.1;
+			else if(total>31&&total<=40)
+				dis=total*0.2;
+			else
+				dis=total*0.50;
+			pay=total-dis;
+		}
+		function show(){
+			document.write("Code="+" "+code);
+			document.write("<br> Name="+" "+name);
+			document.write("<br> Qty="+" "+qty);
+			document.write("<br> Price="+" "+price+"$");
+			document.write("<br> Total="+" "+total+"$");
+			document.write("<br> Discount="+" "+dis+"%");
+			document.write("<br> Pay="+" "+pay+"$");
+		}
+		
+	</script>-->
+	
+	
+	<div id="form" style="display: none;">
+		<input type="text" id="name" placeholder="Enter Your Name"><br>
+		<input type="text" id="pass" placeholder="Enter Your Pass"><br>
+		<button onClick="result()">Login</button>
+		<input type="button" value="Cancel" style="margin-left: 20px;">
+	</div>
+	<button onClick="show()">Show</button>
+	<button onClick="hide()">Hide</button><br>
+	
+	<script>
+		
+		function show(){
+			var show=document.getElementById("form").style.display="block";
+		}
+		function hide(){
+			var hide=document.getElementById("form").style.display="none";
+		}
+		
+	</script>
+	<script>
+		function result(){
+			var name=document.getElementById("name").value;
+			var pass=document.getElementById("pass").value;
+			if(name=="sokheng" && pass=="123"){
+				alert("Welcome");
+			}else{
+				alert("Incorrect");
+			}
+		}
+	</script>
+</body>
+</html>
